@@ -5,7 +5,7 @@ const app = express();
 
 app.use(morgan("common"));
 
-app.get("/movie", (req, res) => {
+app.get("/movie", function handleGetMovies(req, res) {
   res.json(MOVIES);
 });
 
