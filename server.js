@@ -5,8 +5,8 @@ const app = express();
 
 app.use(morgan("common"));
 
-app.use((req, res) => {
-  res.send("Movie Search API");
+app.get("/movie", (req, res) => {
+  res.json(MOVIES);
 });
 
 app.listen(8000, () => {
