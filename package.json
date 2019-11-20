@@ -8,6 +8,9 @@
     "dev": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "10.16.0"
+  },
   "author": "Matt Thornberry",
   "license": "ISC",
   "dependencies": {
