@@ -1,0 +1,20 @@
+{
+  "name": "03_moviedex-api",
+  "version": "1.0.0",
+  "description": "Thinkful Assignment - create an Express application that supports getting movies from a supplied json file and can be filtered by genre, country or average vote.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Thornberry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
