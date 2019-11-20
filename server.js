@@ -4,8 +4,6 @@ const morgan = require("morgan");
 const MOVIES = require("./movies.json");
 const app = express();
 
-console.log(process.env.API_TOKEN);
-
 app.use(morgan("common"));
 
 app.use(function validateBearerToken(req, res, next) {
@@ -18,7 +16,18 @@ app.use(function validateBearerToken(req, res, next) {
 });
 
 app.get("/movie", function handleGetMovies(req, res) {
-  res.send("Movie Search API");
+  let results = MOVIES;
+  if (req.query.genre) {
+    results = results.filter(movie =>
+      movie.genre.toLowerCase().includes(req.query.genre.toLowerCase())
+    );
+  }
+  if (req.query.country) {
+    results = results.filter(movie =>
+      movie.country.toLowerCase().includes(req.query.country.toLowerCase())
+    );
+  }
+  res.json(results);
 });
 
 app.listen(8000, () => {
