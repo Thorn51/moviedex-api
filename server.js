@@ -32,8 +32,8 @@ app.get("/movie", function handleGetMovies(req, res) {
       movie.country.toLowerCase().includes(req.query.country.toLowerCase())
     );
   }
-  if (req.query.rating) {
-    results = results.filter(movie => movie.avg_vote >= req.query.rating);
+  if (req.query.avg_vote) {
+    results = results.filter(movie => movie.avg_vote >= req.query.avg_vote);
   }
   res.json(results);
 });
